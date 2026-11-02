@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brandon Tendilla | Electrical Engineer</title>
+<meta name="description" content="Brandon Tendilla, Northwestern electrical engineering student. Power electronics, PCB design, and embedded systems.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --desk:#008080; --face:#c0c0c0; --hi:#ffffff; --lo:#808080; --ink:#000000;
+  --navy:#000080; --paper:#fffff0; --mark:#ffff99;
+  --title:"Silkscreen","Courier New",monospace;
+  --body:"IBM Plex Mono","Courier New",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{
+  margin:0;padding:24px 16px 80px;background:var(--desk);color:var(--ink);
+  font:15px/1.65 var(--body);
+  background-image:radial-gradient(rgba(0,0,0,.12) 1px,transparent 1px);background-size:4px 4px;
+}
+a{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:2px dashed var(--ink);outline-offset:2px}
+.desktop{max-width:860px;margin:0 auto;display:grid;gap:28px}
+
+/* windows */
+.win{background:var(--face);padding:3px;
+  box-shadow:inset -1px -1px 0 var(--ink),inset 1px 1px 0 var(--hi),inset -2px -2px 0 var(--lo),inset 2px 2px 0 var(--face),6px 6px 0 rgba(0,0,0,.35)}
+.bar{display:flex;align-items:center;gap:8px;background:var(--navy);color:#fff;padding:3px 4px 3px 8px;font:700 13px/1.4 var(--title)}
+.bar h2,.bar h1{margin:0;font:inherit;flex:1;letter-spacing:.04em}
+.btn{width:20px;height:18px;padding:0;background:var(--face);color:var(--ink);border:0;font:700 12px/1 var(--body);cursor:pointer;
+  box-shadow:inset -1px -1px 0 var(--ink),inset 1px 1px 0 var(--hi),inset -2px -2px 0 var(--lo)}
+.btn:active{box-shadow:inset 1px 1px 0 var(--ink),inset -1px -1px 0 var(--hi)}
+.inner{margin:3px;padding:20px 22px;background:var(--paper);
+  box-shadow:inset 1px 1px 0 var(--lo),inset -1px -1px 0 var(--hi),inset 2px 2px 0 var(--ink)}
+.win.shut .inner{display:none}
+
+/* type */
+h3{font:700 16px/1.3 var(--body);margin:0}
+p{margin:0 0 12px}
+ul{margin:8px 0 0;padding-left:20px}
+li{margin-bottom:8px}
+li::marker{content:"> ";font-weight:700}
+.meta{color:#444;font-size:13px;margin:2px 0 4px}
+.job{padding-bottom:18px;margin-bottom:18px;border-bottom:2px dashed var(--lo)}
+.job:last-child{border:0;margin:0;padding:0}
+.row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+mark{background:var(--mark);padding:0 3px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.hero h1{font:700 clamp(26px,5vw,40px)/1.15 var(--title);letter-spacing:.02em;margin:0 0 8px;color:var(--ink)}
+.cursor{display:inline-block;width:.55em;height:1em;background:var(--ink);vertical-align:-.12em;margin-left:4px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.tag{font-size:16px;margin-bottom:16px}
+.links{display:flex;gap:10px;flex-wrap:wrap}
+.pill{display:inline-block;padding:6px 14px;background:var(--face);color:var(--ink);text-decoration:none;font:700 12px/1.5 var(--title);
+  box-shadow:inset -1px -1px 0 var(--ink),inset 1px 1px 0 var(--hi),inset -2px -2px 0 var(--lo),inset 2px 2px 0 var(--face)}
+.pill:active{box-shadow:inset 1px 1px 0 var(--ink),inset -1px -1px 0 var(--hi)}
+.photo{width:150px;height:190px;background:var(--face);display:grid;place-items:center;text-align:center;font-size:12px;color:#444;
+  box-shadow:inset 1px 1px 0 var(--lo),inset -1px -1px 0 var(--hi),inset 2px 2px 0 var(--ink);padding:8px;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* skills + projects */
+dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:10px 22px}
+dt{font-weight:600}
+dd{margin:0}
+.chip{display:inline-block;margin:0 6px 6px 0;padding:0 8px;border:2px solid var(--ink);background:#fff;font-size:13px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+.shots figure{margin:0}
+.shots img{width:100%;display:block;border:2px solid var(--ink);background:#fff}
+.shots figcaption{font-size:12px;color:#444;margin-top:4px}
+
+/* taskbar */
+.task{position:fixed;left:0;right:0;bottom:0;background:var(--face);display:flex;gap:6px;align-items:center;padding:4px 6px;z-index:5;
+  box-shadow:inset 0 2px 0 var(--hi),0 -1px 0 var(--ink)}
+.task .pill{padding:3px 10px;font-size:11px}
+.task nav{display:flex;gap:6px;flex:1;overflow-x:auto}
+.clock{font:12px/1 var(--body);padding:5px 10px;box-shadow:inset 1px 1px 0 var(--lo),inset -1px -1px 0 var(--hi);white-space:nowrap}
+
+@media(max-width:620px){
+  .hero{grid-template-columns:1fr}.photo{order:-1;width:120px;height:150px}
+  dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:10px}
+  .inner{padding:16px}.clock{display:none}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cursor{animation:none}}
+</style>
+</head>
+<body>
+<main class="desktop">
+
+  <section class="win" id="about">
+    <div class="bar"><h1 style="font-size:13px">brandon_tendilla.exe</h1><button class="btn" aria-label="Collapse window">_</button></div>
+    <div class="inner hero">
+      <div>
+        <h1>Brandon Tendilla<span class="cursor" aria-hidden="true"></span></h1>
+        <p class="tag">Electrical engineering student at Northwestern University.</p>
+        <p>I design power electronics and custom PCBs, from 850V SiC inverters to battery management systems and soft sensors. I currently lead the low voltage team at Northwestern Formula SAE.</p>
+        <div class="links">
+          <a class="pill" href="mailto:brandontendilla2028@u.northwestern.edu">Email</a>
+          <a class="pill" href="https://linkedin.com/in/brandontendilla">LinkedIn</a>
+          <a class="pill" href="https://github.com/BrandonT116">GitHub</a>
+          <a class="pill" href="Brandon_Tendilla_Resume.pdf">Resume</a>
+        </div>
+      </div>
+      <div class="photo">
+        <!-- Replace with: <img src="images/brandon.jpg" alt="Brandon Tendilla"> -->
+        <span>photo.jpg<br>150 x 190</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="win" id="experience">
+    <div class="bar"><h2>C:\EXPERIENCE</h2><button class="btn" aria-label="Collapse window">_</button></div>
+    <div class="inner">
+
+      <article class="job">
+        <div class="row"><h3>BorgWarner</h3><span class="meta">Jun 2026 – Sep 2026</span></div>
+        <p class="meta">Power Electronics Hardware Design Intern, Kokomo, IN</p>
+        <ul>
+          <li>Characterized a flyback converter on an inverter in LTspice before prototyping, then validated efficiency on the bench for a <mark>90% power loss reduction</mark>.</li>
+          <li>Ran Double Pulse Testing on a 600V next-gen inverter and an 850V dual inverter. Benchmarked two SiC MOSFET die suppliers to cut switching losses and <mark>boost efficiency by 50%</mark>.</li>
+          <li>Minimized PCB parasitic inductance on the dual inverter, eliminating phase asymmetry across outputs and improving switching stability at high current.</li>
+          <li>Ran Short Circuit Testing with a desaturation protection circuit, keeping worst case 850V @ 6kA within component limits.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row"><h3>Northwestern Formula SAE</h3><span class="meta">Sep 2024 – Present</span></div>
+        <p class="meta">Low Voltage Lead Engineer, Evanston, IL</p>
+        <ul>
+          <li>Lead a team of 6+ on three drive-critical projects: the Power Distribution Module, Electronic Control Unit, and full low voltage wiring harness.</li>
+          <li>Built a 5-week electrical curriculum and a custom educational PCB, training <mark>60+ new members</mark> in Altium, layout, soldering, and lab equipment.</li>
+          <li>Engineered a custom PCB with current sensing for PWM-controlled cooling, overvoltage detection, dual-line eFuse protection, CAN telemetry, and vehicle-wide voltage regulation.</li>
+          <li>Pushed for early harness manufacturing and set rigid testing plans in design reviews, so boards shipped before the school year began.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row"><h3>VAK Embodied Systems Lab</h3><span class="meta">Feb 2025 – Jun 2026</span></div>
+        <p class="meta">Electrical Engineering Research Intern, Evanston, IL</p>
+        <ul>
+          <li>Developed a differential capacitive sensing PCB that suppresses crosstalk and supports dense pressure sensing at only <mark>330 mW</mark>.</li>
+          <li>Architected a multi-channel, charge-injection scanning system with analog switches and amplifiers. It gives programmable scan rate and channel selection and enables multi-touch detection.</li>
+          <li>Fabricated custom flex PCBs to interface with knitted yarn patches and optimize the sensing node to 5mm x 5mm. The work was validated and used in a UIST poster submission.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="win" id="projects">
+    <div class="bar"><h2>C:\PROJECTS</h2><button class="btn" aria-label="Collapse window">_</button></div>
+    <div class="inner">
+
+      <article class="job">
+        <div class="row"><h3>Low Voltage Battery Management System</h3><span class="meta">Jun 2026 – Present</span></div>
+        <ul>
+          <li>Designed and modeled a 3s6p Li-ion pack from Molicel P50B cells (5000mAh, 60A continuous) to power a 12-fan and pump cooling system for the car's high-voltage battery.</li>
+          <li>Simulated current draw and thermal load to validate cell selection before fabrication.</li>
+          <li>Building a custom PCB around the BQ76920 monitoring IC, with CAN firmware for real-time telemetry to the ECU.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row"><h3>Power Distribution Module (PDM)</h3><span class="meta">Jul 2025 – Jun 2026</span></div>
+        <ul>
+          <li>Researched SEPIC converters, high side switches, and eFuse ICs, then designed the schematic and layout in Altium. This was my first PCB.</li>
+          <li>Soldered, debugged, and tested the board with custom C++ firmware, and validated CAN in a full electrical integration.</li>
+          <li>Result: fast fusing, power regulation from the LV battery, CAN communication, and PWM cooling control.</li>
+        </ul>
+        <div class="shots">
+          <!-- Add images: <figure><img src="images/pdm.png" alt="PDM board"><figcaption>PDM v2</figcaption></figure> -->
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="row"><h3>Pressure Sensing Mainboard</h3><span class="meta">VAK Lab, 2025 – 2026</span></div>
+        <ul>
+          <li>Designed an Altium mainboard and a KiCad flexible PCB (my first FPC) for an 8x8 knitted pressure array, with layout tuned to reduce capacitive coupling.</li>
+          <li>Wrote a real-time pressure mapping script that shows relative capacitance across the array.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row"><h3>Knitted HASEL Actuator</h3><span class="meta">Apr 2025 – Jun 2025</span></div>
+        <ul>
+          <li>Fabricated soft electrohydraulic actuators from conductive cloth electrodes and heat sealing, a low-cost process suited to education.</li>
+          <li>Built 3–9 kV drive circuitry and reached <mark>over 190,000 reliable cycles</mark> at 6 kV.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="win" id="skills">
+    <div class="bar"><h2>C:\SKILLS</h2><button class="btn" aria-label="Collapse window">_</button></div>
+    <div class="inner">
+      <dl>
+        <dt>Design</dt><dd><span class="chip">Altium</span><span class="chip">KiCad</span><span class="chip">LTspice</span><span class="chip">RapidHarness</span><span class="chip">CANape</span><span class="chip">SolidWorks</span><span class="chip">Git</span><span class="chip">Docker</span></dd>
+        <dt>Languages</dt><dd><span class="chip">C</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Verilog</span></dd>
+        <dt>Protocols</dt><dd><span class="chip">CAN</span><span class="chip">I2C</span><span class="chip">UART</span><span class="chip">SPI</span></dd>
+        <dt>Lab</dt><dd><span class="chip">Oscilloscopes</span><span class="chip">HV power supplies</span><span class="chip">Spectrum analyzers</span><span class="chip">LCR meters</span><span class="chip">Signal generators</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="win" id="education">
+    <div class="bar"><h2>C:\EDUCATION</h2><button class="btn" aria-label="Collapse window">_</button></div>
+    <div class="inner">
+      <div class="row"><h3>Northwestern University</h3><span class="meta">Anticipated March 2027</span></div>
+      <p class="meta">B.S. Electrical Engineering, Minor in Artificial Intelligence. GPA 3.7/4.0</p>
+      <p>Coursework: Circuit Analysis and Power Transfers, CMOS VLSI Design, Advanced Digital Design, Discrete and Continuous Signal Systems, Data Structures, Power Electronics, Control Systems.</p>
+    </div>
+  </section>
+
+  <section class="win" id="contact">
+    <div class="bar"><h2>C:\CONTACT</h2><button class="btn" aria-label="Collapse window">_</button></div>
+    <div class="inner">
+      <p>Open to power electronics and hardware roles. Write to me at <a href="mailto:brandontendilla2028@u.northwestern.edu">brandontendilla2028@u.northwestern.edu</a>.</p>
+      <div class="links">
+        <a class="pill" href="mailto:brandontendilla2028@u.northwestern.edu">Send email</a>
+        <a class="pill" href="https://linkedin.com/in/brandontendilla">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="task">
+  <a class="pill" href="#about">Start</a>
+  <nav aria-label="Sections">
+    <a class="pill" href="#experience">Experience</a>
+    <a class="pill" href="#projects">Projects</a>
+    <a class="pill" href="#skills">Skills</a>
+    <a class="pill" href="#education">Education</a>
+    <a class="pill" href="#contact">Contact</a>
+  </nav>
+  <span class="clock" id="clock" aria-hidden="true"></span>
+</div>
+
+<script>
+document.querySelectorAll('.btn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var w=b.closest('.win'); var shut=w.classList.toggle('shut');
+    b.textContent=shut?'+':'_';
+    b.setAttribute('aria-label',shut?'Expand window':'Collapse window');
+  });
+});
+function tick(){
+  var d=new Date();
+  document.getElementById('clock').textContent=d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
+}
+tick(); setInterval(tick,30000);
+</script>
+</body>
+</html>
